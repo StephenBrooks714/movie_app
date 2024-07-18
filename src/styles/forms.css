@@ -1,0 +1,15 @@
+.form-label {
+  font-size: 12px;
+  color: #999;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 1px solid #999;
+  border-radius: 0;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+
+/*# sourceMappingURL=forms.css.map */

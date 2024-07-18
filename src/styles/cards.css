@@ -1,0 +1,32 @@
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  margin: 2rem auto;
+  max-width: 40rem;
+}
+
+.rounded {
+  border-radius: 12px;
+}
+
+.shadow-lg {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  margin: 2rem auto;
+  max-width: 40rem;
+}
+
+a.card {
+  text-decoration: none;
+  color: black;
+  transition: color 0.1s ease-in;
+}
+a.card:hover, a.card:active {
+  transition: color 0.1s ease-out;
+  transform: scale(1.1);
+  color: #f1c40f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+/*# sourceMappingURL=cards.css.map */

@@ -1,0 +1,13 @@
+.intro {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://domyhomework.guru/static/img/regular/moviereview.png?ver=15Apr20211422") no-repeat center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=homeStyles.css.map */
