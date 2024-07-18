@@ -22,13 +22,13 @@ export default function NavBar(){
                         </Link>
                     </li>
                     <li className={"nav-item"}>
-                        <Link to={"/"} className={"nav-link"}>About</Link>
+                        <Link to={"/about"} className={"nav-link"}>About</Link>
                     </li>
                     <li className={"nav-item"}>
-                        <Link to={"/"} className={"nav-link"}>Blogs</Link>
+                        <Link to={"/blogs"} className={"nav-link"}>Blogs</Link>
                     </li>
                     <li className={"nav-item"}>
-                        <Link to={"/"} className={"nav-link"}>Apps</Link>
+                        <Link to={"/apps"} className={"nav-link"}>Apps</Link>
                     </li>
                 </ul>
                 <ul className={"nav-items"}>
@@ -37,19 +37,19 @@ export default function NavBar(){
                         <ul className={"drop-down-items fadeInRight"}>
                             <button className={"btn-primary"} onClick={closeMenu}>close</button>
                             <li className={"drop-down-item"}>
-                                <Link to={"/"} className={"link"}>About</Link>
+                                <Link to={"/about"} className={"link"}>About</Link>
                             </li>
                             <li className={"drop-down-item"}>
-                                <Link to={"/"} className={"link"}>Blogs</Link>
+                                <Link to={"/blogs"} className={"link"}>Blogs</Link>
                             </li>
                             <li className={"drop-down-item"}>
-                                <Link to={"/"} className={"link"}>Apps</Link>
+                                <Link to={"/apps"} className={"link"}>Apps</Link>
                             </li>
                             <li className={"drop-down-item"}>
                                 <Link to={"/"} className={"link"}>Help</Link>
                             </li>
                             <li className={"drop-down-item"}>
-                                <Link to={"/"} className={"link"}>Login</Link>
+                                <Link to={"/login"} className={"link"}>Login</Link>
                             </li>
                         </ul>
                     </li>

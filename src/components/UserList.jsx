@@ -13,6 +13,7 @@ export default function MovieCard() {
     function addToQueue() {
         document.getElementById("list").innerHTML += `<li>${images.title}</li>`
     }
+
     return (
         <>
             {data.map((images) => {
