@@ -1,4 +1,7 @@
 import {Link, Routes, Route} from "react-router-dom";
+import { useDescope, useSession, useUser } from '@descope/react-sdk'
+import { getSessionToken } from '@descope/react-sdk';
+import {useCallback} from "react";
 
 export default function NavBar(){
     function showMenu(){
@@ -11,6 +14,27 @@ export default function NavBar(){
     function closeMenu(){
         document.querySelector(".drop-down-items").style.display = "none";
     }
+    const { isAuthenticated } = useSession()
+    const { user } = useUser()
+    const { logout } = useDescope()
+
+    const exampleFetchCall = async () => {
+        const sessionToken = getSessionToken();
+
+        // example fetch call with authentication header
+        fetch('https://auth.descope.io/P2hwIdyL38KIgwdClKN9PiPfzF9g?flow=sign-up-or-in', {
+            headers: {
+                Accept: 'application/json',
+                Authorization: 'Bearer ' + sessionToken,
+            }
+        })
+    }
+
+    const handleLogout = useCallback(() => {
+        logout()
+        // redirect to home after logout
+        window.location.href = "/"
+    }, [logout])
     return (
         <>
             <nav className={"bg-light-shadow-gradient top-fixed navbar"}>
@@ -46,18 +70,43 @@ export default function NavBar(){
                                 <Link to={"/apps"} className={"link"}>Apps</Link>
                             </li>
                             <li className={"drop-down-item"}>
-                                <Link to={"/"} className={"link"}>Help</Link>
-                            </li>
-                            <li className={"drop-down-item"}>
-                                <Link to={"/login"} className={"link"}>Login</Link>
+                                {!isAuthenticated &&
+                                    (
+                                        <Link to={"/login"} className={"nav-link"}>Login</Link>
+                                    )
+                                }
+                                {isAuthenticated &&
+                                    (
+                                        <>
+                                            <Link to={"/login"} className={"nav-link"}>
+                                                <span style={{marginRight: "10px", fontWeight: "bold"}}>Profile</span>
+                                            </Link>
+                                            <br/><br/>
+                                            <button className={"btn btn-primary"} onClick={handleLogout}>Logout
+                                            </button>
+                                        </>
+                                    )
+                                }
                             </li>
                         </ul>
                     </li>
                     <li className={"nav-item"}>
-                        <a href="" className={"nav-link"}>Help</a>
-                    </li>
-                    <li className={"nav-item"}>
-                        <Link to={"/login"} className={"nav-link"}>Login</Link>
+                        {!isAuthenticated &&
+                            (
+                                <Link to={"/login"} className={"nav-link"}>Login</Link>
+                            )
+                        }
+                        {isAuthenticated &&
+                            (
+                                <>
+                                    <Link to={"/login"} className={"nav-link"}>
+                                        <span style={{marginRight: "10px"}}>Profile</span>
+                                    </Link>
+                                    <button className={"btn btn-primary"} onClick={handleLogout}>Logout
+                                    </button>
+                                </>
+                            )
+                        }
                     </li>
                 </ul>
             </nav>
