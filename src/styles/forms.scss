@@ -41,3 +41,34 @@
     }
   }
 }
+.form-search {
+  .form-control {
+    border: none;
+    border-bottom: 1px solid #999;
+    padding: 0.5rem 0.4rem;
+    border-radius: 5px;
+    width: 300px;
+    &:focus {
+      box-shadow: none;
+    }
+    @media screen and (max-width: 762px) {
+      width: 70%;
+    }
+  }
+  .form-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    &:hover {
+      background-color: #0069d9;
+    }
+  }
+}

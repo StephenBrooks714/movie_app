@@ -1,7 +1,7 @@
 const key = process.env.VITE_API_KEY;
 const token = process.env.VITE_TOKEN;
 const fetch = require('node-fetch');
-const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc';
+const url = `https://api.themoviedb.org/3/movie/550?api_key=${key}&language=en-US`;
 const options = {
     method: 'GET',
     headers: {

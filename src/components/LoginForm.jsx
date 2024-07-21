@@ -6,6 +6,7 @@ import { getSessionToken } from '@descope/react-sdk';
 import UserList from "./UserList";
 
 const App = () => {
+
     const { isAuthenticated, isSessionLoading } = useSession()
     const { user, isUserLoading } = useUser()
     const { logout } = useDescope()
