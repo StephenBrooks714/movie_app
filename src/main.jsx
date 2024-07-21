@@ -57,7 +57,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
     <AuthProvider
         projectId='P2hwIdyL38KIgwdClKN9PiPfzF9g'
-        baseUrl='https://stevesmovieapp.netlify.app/'
     >
         <RouterProvider router={router} />
     </AuthProvider>
